@@ -1,6 +1,6 @@
 # API Server
 
-This is an example API server that uses lowdb (local file database).
+This is an example API server that uses lowdb (https://github.com/typicode/lowdb).
 
 FYI, I created this project using the express generator ("npx express-generator") and then modified the files as necessary.
 
