@@ -1,0 +1,27 @@
+# GET list of users
+GET http://localhost:3000/users HTTP/1.1 
+###
+
+# GET list of users
+GET http://localhost:3000/users?sex=female HTTP/1.1 
+###
+
+# GET user info
+GET http://localhost:3000/users/Wilma HTTP/1.1 
+###
+
+# GET user info specific
+GET http://localhost:3000/users/Wilma/age HTTP/1.1 
+###
+
+# PUT
+PUT http://localhost:3000/users/Wilma HTTP/1.1 
+content-type: application/json
+
+{
+    "age": "29"
+}
+###
+
+# POST
+POST http://localhost:3000/users/Wilma HTTP/1.1 
