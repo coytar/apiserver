@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
     const keys = Object.keys(req.query);
     const key = keys[0];
     const value = req.query[key];
-    console.log(key, value);
     return res.send(db.get("users").filter(x => x[key] == value));
   }
   return res.send(db.get("users").value());
