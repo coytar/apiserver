@@ -11,7 +11,11 @@ db.defaults({ users: [{ "name": "Fred" }, { "name": "Daphe" }] }).write();
 
 router.get('/', (req, res) => {
   if (Object.keys(req.query).length > 0) {
-    return res.send(db.get("users").filter(x => x['sex'] == 'female'));
+    const keys = Object.keys(req.query);
+    const key = keys[0];
+    const value = req.query[key];
+    console.log(key, value);
+    return res.send(db.get("users").filter(x => x[key] == value));
   }
   return res.send(db.get("users").value());
 });
@@ -30,7 +34,6 @@ router.post('/:userId', (req, res) => {
 });
 
 router.put('/:userId', (req, res) => {
-  var value = db.get("users").find({ name: req.params.userId });
   const keys = Object.keys(req.body);
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
